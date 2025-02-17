@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Fone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .teclado {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        input[type="button"] {
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        input[type="tel"] {
+            width: 200px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Alura Fone </h1>
+    <section class="teclado">
+        <input type="button" value="1" onclick="adicionarNumero(this)">
+        <input type="button" value="2" onclick="adicionarNumero(this)">
+        <input type="button" value="3" onclick="adicionarNumero(this)">
+        <input type="button" value="4" onclick="adicionarNumero(this)">
+        <input type="button" value="5" onclick="adicionarNumero(this)">
+        <input type="button" value="6" onclick="adicionarNumero(this)">
+        <input type="button" value="7" onclick="adicionarNumero(this)">
+        <input type="button" value="8" onclick="adicionarNumero(this)">
+        <input type="button" value="9" onclick="adicionarNumero(this)">
+        <input type="button" value="*" onclick="adicionarNumero(this)">
+        <input type="button" value="0" onclick="adicionarNumero(this)">
+        <input type="button" value="#" onclick="adicionarNumero(this)">
+    </section>
+    <input type="tel" id="tela" placeholder="Digite seu telefone">
+    
+    <script>
+        function adicionarNumero(botao) {
+            let tela = document.getElementById('tela');
+            tela.value += botao.value;
+        }
+    </script>
+</body>
+</html>
