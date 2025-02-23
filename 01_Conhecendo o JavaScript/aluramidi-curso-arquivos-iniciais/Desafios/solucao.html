@@ -36,26 +36,32 @@
 <body>
     <h1> Alura Fone </h1>
     <section class="teclado">
-        <input type="button" value="1" onclick="adicionarNumero(this)">
-        <input type="button" value="2" onclick="adicionarNumero(this)">
-        <input type="button" value="3" onclick="adicionarNumero(this)">
-        <input type="button" value="4" onclick="adicionarNumero(this)">
-        <input type="button" value="5" onclick="adicionarNumero(this)">
-        <input type="button" value="6" onclick="adicionarNumero(this)">
-        <input type="button" value="7" onclick="adicionarNumero(this)">
-        <input type="button" value="8" onclick="adicionarNumero(this)">
-        <input type="button" value="9" onclick="adicionarNumero(this)">
-        <input type="button" value="*" onclick="adicionarNumero(this)">
-        <input type="button" value="0" onclick="adicionarNumero(this)">
-        <input type="button" value="#" onclick="adicionarNumero(this)">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input type="button" value="*">
+        <input type="button" value="0">
+        <input type="button" value="#">
     </section>
     <input type="tel" id="tela" placeholder="Digite seu telefone">
     
     <script>
-        function adicionarNumero(botao) {
-            let tela = document.getElementById('tela');
-            tela.value += botao.value;
-        }
+        const botoes = document.querySelectorAll('input[type="button"]');
+        let tela = document.getElementById("tela");
+
+        botoes.forEach(botao => {
+            botao.addEventListener("click", function() {
+                let valor = this.value;
+                tela.value = tela.value + valor;
+            });
+        });
+
     </script>
 </body>
 </html>
